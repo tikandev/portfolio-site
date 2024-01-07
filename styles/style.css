@@ -1,0 +1,307 @@
+:root {
+    /* Sivuston oletusarvot asetettu tässä */
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:white;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+p {                    
+    padding: 1em; 
+    font-size: 110%; 
+  }
+
+.me_h1 {            
+    text-align: center;
+    padding: 0.8em; 
+    font-size: 3em;
+
+}
+
+.navbar {
+    position: fixed;
+    background-color: #424a59;
+    transition: width 300ms ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    color: #a2a6f2;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 300ms;
+}
+
+.nav-text {
+    text-align: center;
+    display: none;
+    margin-left: 1rem;
+    color: white;
+}
+
+#logo {
+    width: 75%;
+    height: auto;
+    padding-left: 0.5rem;
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    color: #a2a6f2;
+}
+
+.nav-link:visited {
+    color: #a2a6f2;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+}
+
+a:link{
+    color: #EBEEF2; 
+}
+
+a:hover {
+    text-decoration: none;
+    color: #a2a6f2;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #93BFBB;
+}
+
+article.page {
+    background-color: #EBEEF2;
+    width: 100%;
+    overflow: auto;
+}
+
+#header-name-bg {
+    background-image: url("../images/sicily.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header-name-text {
+    border: 2px solid #8a979a;
+    /*Tekstilaatikon asetukset, mikä on kuvan päällä*/
+    max-width: 45%;
+    display: inline-block;
+    overflow: hidden;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0.525em 0.525em 0.3125em #424A59;
+    letter-spacing: 0.1em;
+}
+
+header {
+    text-align: center;
+    padding: 5em;
+    font-size: 150%;
+}
+
+.header-bg {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(0,0,0) 0%, rgba(152,181,202,1) 35%, rgba(0,0,0) 100%);
+    padding: 2em;
+    letter-spacing: 0.1em;
+}
+
+.about-card {
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #424A59;
+    border-radius: 1rem;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.work-history-card {
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    width: 25rem;
+    background-color: #424A59;
+    border-radius: 1rem;
+}
+
+.work-history-card p {
+    padding-top: 1rem;
+}
+
+.portfolio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-card {
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    width: 25rem;
+    background-color: #424A59;
+    border-radius: 1rem;
+}
+
+.portfolio-card p {
+    padding-top: 1rem;
+}
+
+.harrastukset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.harrastukset-card {
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    width: 25rem;
+    background-color: #424A59;
+    border-radius: 1rem;
+}
+
+.harrastukset-card p {
+    padding-top: 1rem;
+}
+
+#profilecard {
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #424A59;
+    border-radius: 1rem;
+}
+
+#profilecard a {
+    padding: 1rem;
+}
+
+#profilepic {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding-top: 0.8em; 
+    height: 3em;
+    background-color: #424A59;
+  }
+  
+
+/* Responsiivisuus osio alkaa tästä */
+
+/* Pieniruutuiset laitteet (puhelimet, tabletit jne. < 800px) */
+@media only screen and (max-width: 800px) {
+
+    /* Poistetaan marginaali joka ollut navbaria varten */
+    main {
+        margin: 0;
+    }
+
+    /* Siirretään navbar vasemmasta laidasta alareunaan. Pienemmillä ruuduilla on enemmän vertikaalista tilaa ja alareuna lähempänä käyttäjän peukaloa.*/
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    #header-name-text {
+        width: 100%;
+        padding: 0.5em;
+    }
+
+    .about-me {
+        flex-direction: column;
+    }
+
+    #profilecard {
+        width: auto;
+    }
+
+    .portfolio {
+        flex-direction: column;
+    }
+
+    .harrastukset {
+        flex-direction: column;
+    }
+
+    #yhteystiedot {
+        margin-bottom: 4rem;
+    }
+
+}
+
+/* Isot ruudut ( > 801px) */
+@media only screen and (min-width: 801px) {
+
+    /* Isommilla ruuduilla enemmän horisontaalista tilaa, sijoitetaan navbar vasempaan reunaan  */
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 12rem;
+    }
+
+    .navbar:hover .nav-text {
+        display: inline;
+    }
+
+    article.page {
+        padding-left: 5rem;
+    }
+}
